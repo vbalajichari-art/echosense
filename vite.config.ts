@@ -7,13 +7,13 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
-    base: './', 
+    base: '/echosense/', 
     plugins: [
       react(), 
       tailwindcss(),
       VitePWA({
         registerType: 'autoUpdate',
-        includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
+        includeAssets: [],
         manifest: {
           name: 'EchoSense - Acoustic Planner',
           short_name: 'EchoSense',
@@ -21,20 +21,14 @@ export default defineConfig(({mode}) => {
           theme_color: '#059669',
           icons: [
             {
-              src: 'pwa-192x192.png',
+              src: 'https://picsum.photos/seed/echosense/192/192',
               sizes: '192x192',
               type: 'image/png'
             },
             {
-              src: 'pwa-512x512.png',
+              src: 'https://picsum.photos/seed/echosense/512/512',
               sizes: '512x512',
               type: 'image/png'
-            },
-            {
-              src: 'pwa-512x512.png',
-              sizes: '512x512',
-              type: 'image/png',
-              purpose: 'any maskable'
             }
           ]
         }
